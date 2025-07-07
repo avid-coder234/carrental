@@ -9,6 +9,7 @@ import bookingRoutes from "./routes/bookings.js";
 
 dotenv.config();
 const app = express();
+const MONGO_URI = process.env.MONGO;
 
 // middle‑ware
 app.use(cors());
@@ -21,7 +22,7 @@ app.use("/api/bookings", bookingRoutes);
 
 // boot
 mongoose
-  .connect("mongodb+srv://tempwork345123:BBxBPBLe9LXIiMgE@cluster0.wj0ye6m.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
+  .connect(MONGO_URI)
   .then(() => {
     app.listen(4000, () =>
       console.log(`Server running @ http://localhost:4000`)
@@ -35,7 +36,7 @@ import bcrypt from 'bcrypt';
 import User from './models/User.js'; // Ensure this file is also an ES module
 
 // Connect to MongoDB
-await mongoose.connect('mongodb+srv://tempwork345123:BBxBPBLe9LXIiMgE@cluster0.wj0ye6m.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0', {
+await mongoose.connect(MONGO_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
