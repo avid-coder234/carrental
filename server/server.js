@@ -60,4 +60,12 @@ async function ensureAdminExists() {
   console.log('✅ Admin user seeded on startup.');
 }
 
+
+
 await ensureAdminExists();
+
+app.use(cors({
+  origin: 'https://carrental-beige.vercel.app',
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true,
+}));
