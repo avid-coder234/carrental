@@ -25,7 +25,7 @@ mongoose
   .connect(MONGO_URI)
   .then(() => {
     app.listen(4000, () =>
-      console.log(`Server running @ http://localhost:4000`)
+      console.log(`Server running @ https://carrental-7tiv.onrender.com/api`)
     );
   })
   .catch(err => console.error(err));
