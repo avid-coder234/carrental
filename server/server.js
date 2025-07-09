@@ -88,8 +88,8 @@ const MONGO_URI = process.env.MONGO;
 
 // --- CORS CONFIGURATION ---
 const allowedOrigins = [
-  "https://carrental-beige.vercel.app",
-  "http://localhost:3000",
+  "https://carrental-7tiv.onrender.com/api",
+  "http://localhost:3000"
 ];
 
 app.use(cors({
